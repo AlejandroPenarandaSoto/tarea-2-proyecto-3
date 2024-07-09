@@ -13,7 +13,6 @@ export interface IUser {
   lastname?: string;
   email?: string;
   password?: string;
-  active?: boolean;
   createdAt?: string;
   updatedAt?: string;
   authorities?: IAuthority[];
@@ -57,4 +56,10 @@ export interface IGame {
   description?: string,
   createdAt?: string,
   updatedAt?: string
+}
+
+export interface ICategory {
+  categoryId?: number;
+  name?: string;
+  description?: string;
 }
