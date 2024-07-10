@@ -36,6 +36,7 @@ export class ProductsComponent {
   ngOnInit(): void {
     this.authService.getUserAuthorities();
     this.productService.getAll();
+    this.categoryService.getAll();
     this.route.data.subscribe( data => {
       this.routeAuthorities = data['authorities'] ? data['authorities'] : [];
       this.areActionsAvailable = this.authService.areActionsAvailable(this.routeAuthorities);
