@@ -23,7 +23,8 @@
   </div>
 
   <app-modal size="lg" #formModal>
-    <app-products-form 
+    <app-products-form
+    [categoryList]="categoryService.items$()" 
     (callParentEvent)="onFormEventCalled($event)"
     [title]="'Add Product'"
     ></app-products-form>

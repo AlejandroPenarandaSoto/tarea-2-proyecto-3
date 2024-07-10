@@ -18,7 +18,7 @@ export class ProductsFormComponent {
   @Input() title: string = '';
   @Input() toUpdateProduct: IProduct = {
     category:{
-
+      categoryId:1
     }
   };
   @Input() categoryList :ICategory[] = [];

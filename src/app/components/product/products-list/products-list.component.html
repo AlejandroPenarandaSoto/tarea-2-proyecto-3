@@ -7,7 +7,7 @@
           <th scope="col">Description</th>
           <th scope="col">Price</th>
           <th scope="col">Stock</th>
-          <th scope="col">Category ID</th>
+          <th scope="col">Category Name</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
@@ -19,7 +19,7 @@
             <td>{{item.description}}</td>
             <td>{{item.price}}</td>
             <td>{{item.stock}}</td>
-            <td>{{item.category?.categoryId}}</td>
+            <td>{{item.category?.name}}</td>
             <td>
               <button type="button" (click)="showDetailModal(item, detailModal)"  class="btn btn-secondary">
                 <i class="fa-solid fa-eye white"
@@ -38,6 +38,7 @@
   
   <app-modal #detailModal>
     <app-products-form
+    [categoryList]="categoryService.items$()"
     (callParentEvent)="onFormEventCalled($event)"
     [title]="'Update Product'"
     [toUpdateProduct]="selectedItem"

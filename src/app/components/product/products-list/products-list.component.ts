@@ -5,6 +5,7 @@ import { ProductsFormComponent } from './../products-form/products-form.componen
 import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ModalComponent } from '../../modal/modal.component';
 import { CommonModule } from '@angular/common';
+import { CategoryService } from '../../../services/category.service';
 
 @Component({
   selector: 'app-products-list',
@@ -20,6 +21,7 @@ import { CommonModule } from '@angular/common';
 export class ProductsListComponent implements OnChanges{
   @Input() itemList: IProduct[] = [];
   @Input() areActionsAvailable: boolean = false;
+  public categoryService = inject(CategoryService);
   public selectedItem: IProduct = {};
   private productService = inject(ProductService);
   public modalService = inject(NgbModal);
