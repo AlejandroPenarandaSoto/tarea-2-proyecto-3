@@ -63,3 +63,12 @@ export interface ICategory {
   name?: string;
   description?: string;
 }
+
+export interface IProduct {
+  productId?: number;
+  name?: string;
+  description?: string;
+  price?: number;
+  stock?: number;
+  category?: ICategory
+}
