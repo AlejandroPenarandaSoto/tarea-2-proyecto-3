@@ -30,6 +30,10 @@ export class ProductsListComponent implements OnChanges{
     if(changes['areActionsAvailable']) {
       console.log('areActionsAvailable', this.areActionsAvailable);
     }
+    if (changes['itemList']) {
+      // Optional: Log changes for debugging
+      console.log('Item list changes:', this.itemList);
+    }
   }
 
   showDetailModal(item: IProduct, modal:any) {

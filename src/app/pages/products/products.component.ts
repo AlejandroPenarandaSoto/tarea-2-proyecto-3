@@ -1,5 +1,5 @@
 import { ProductsListComponent } from './../../components/product/products-list/products-list.component';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
@@ -24,7 +24,7 @@ import { CategoryService } from '../../services/category.service';
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit{
   public productService: ProductService = inject(ProductService);
   public categoryService: CategoryService = inject(CategoryService);
   public modalService: NgbModal = inject(NgbModal);
